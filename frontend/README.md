@@ -28,3 +28,6 @@ Your app is ready to be deployed!
 	2. Authentication
 	3. Side menu bar
 	3. Page navigation
+
+I haven't added session management, with cookies, local storage, etc. it can be used as: when a user login we save use auth details in any of those and check the existence of the use session with chosen option.\
+For this example I have used the useContext as alternative. to show global state management.
