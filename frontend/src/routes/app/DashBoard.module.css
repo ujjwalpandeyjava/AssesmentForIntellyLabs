@@ -1,0 +1,16 @@
+.home {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	background-color: rgb(247, 238, 238);
+	height: 90vh;
+}
+.home > section {
+	min-height: 100%;
+}
+.interactionSection {
+	width: 100%;
+	padding: 1em;
+}
