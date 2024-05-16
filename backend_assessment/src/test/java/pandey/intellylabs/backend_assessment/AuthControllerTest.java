@@ -97,7 +97,7 @@ public class AuthControllerTest {
 	    loginCred.setEmail("existing@example.com");
 	    loginCred.setPassword("existingPassword");
 
-	    ResponseEntity<Map<String, String>> response = auth.loginUser(loginCred);
+	    ResponseEntity<Map<String, Object>> response = auth.loginUser(loginCred);
 	    logger.info("{}", response.getBody());
 
 	    assertEquals(HttpStatus.OK, response.getStatusCode());
@@ -109,7 +109,7 @@ public class AuthControllerTest {
 	    loginCred.setEmail("existing@example.com");
 	    loginCred.setPassword("wrongPassword");
 
-	    ResponseEntity<Map<String, String>> response = auth.loginUser(loginCred);
+	    ResponseEntity<Map<String, Object>> response = auth.loginUser(loginCred);
 
 	    assertEquals(HttpStatus.UNAUTHORIZED, response.getStatusCode());
 	    assertEquals("Incorrect password!", response.getBody().get(Const.MESSAGE));
@@ -120,7 +120,7 @@ public class AuthControllerTest {
 	    loginCred.setEmail("nonexistent@example.com");
 	    loginCred.setPassword("anyPassword");
 
-	    ResponseEntity<Map<String, String>> response = auth.loginUser(loginCred);
+	    ResponseEntity<Map<String, Object>> response = auth.loginUser(loginCred);
 
 	    assertEquals(HttpStatus.UNAUTHORIZED, response.getStatusCode());
 	    assertEquals("User not found!", response.getBody().get(Const.MESSAGE));
